@@ -1,1 +1,57 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use 'sass:map';
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$clientes-primary: mat.define-palette(mat.$teal-palette);
+$clientes-accent: mat.define-palette(mat.$cyan-palette, A100, A200, A400);
+// The warn palette is optional (defaults to red).
+$clientes-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$clientes-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $clientes-primary,
+      accent: $clientes-accent,
+      warn: $clientes-warn,
+    )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($clientes-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+crm-root{
+  display: block;
+  height:100%;
+}
+
+.mat-app-background{
+  background-color: map.get(mat.$cyan-palette,100);
+}
+
+a{
+  text-decoration: none;
+}
+.mat-card, a{
+  color: map.get(mat.$teal-palette,500);
+}
+// @use "@material/tab-bar/mdc-tab-bar";
+// @use "@material/tab-scroller/mdc-tab-scroller";
+// @use "@material/tab-indicator/mdc-tab-indicator";
+// @use "@material/tab/mdc-tab";
