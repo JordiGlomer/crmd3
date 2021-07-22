@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group(this.user);
-    // console.log(this.user)
+    console.log(this.user)
     Object.keys(this.formGroup.controls).map((ctrl) => {
       this.formGroup.controls[ctrl].setValidators(Validators.required);
-      //  console.log(this.formGroup);
+      console.log(this.formGroup);
     });
   }
 }

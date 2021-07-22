@@ -37,6 +37,11 @@ const routes: Routes = [
     canLoad: [AuthGuard],
     resolve: { cliente: ClienteResolverService },
   },
+  {
+    path: "",
+    redirectTo: "/login-form",
+    pathMatch: "full"
+  }
 ];
 
 @NgModule({

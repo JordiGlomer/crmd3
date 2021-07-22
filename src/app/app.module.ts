@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SplashComponent } from './user/components/splash/splash.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,SplashComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

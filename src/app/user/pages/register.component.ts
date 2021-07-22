@@ -13,7 +13,7 @@ import { User } from 'src/app/shared/model/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
-  selector: 'acme-register',
+  selector: 'crm-register',
   template: `<reg-form
     [formGroup]="formGroup"
     [error]="error"
