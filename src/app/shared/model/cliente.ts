@@ -1,4 +1,4 @@
-import { MaterialModule } from '../material.module';
+// import { MaterialModule } from '../material.module';
 
 export class Cliente {
   numeroCliente: number = this.generator();

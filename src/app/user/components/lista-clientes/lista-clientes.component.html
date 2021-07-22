@@ -1,1 +1,7 @@
-{{ clientes }}
+<ul *ngFor="let cliente of clientes">
+  <li>{{ cliente.id }}</li>
+  <li>{{ cliente.name }}</li>
+  <li>{{ cliente.surname }}</li>
+  <li>{{ cliente.category }}</li>
+  <li>{{ cliente.email }}</li>
+</ul>

@@ -1,5 +1,7 @@
+import { SplashComponent } from '../splash/splash.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
 
 
 @Component({
@@ -10,6 +12,7 @@ import { FormGroup } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
 @Input() formGroup!: FormGroup;
 @Input() error!:string;
+ @Input() splashComponent!: SplashComponent;
 
 @Output() submitEvt = new EventEmitter();
 

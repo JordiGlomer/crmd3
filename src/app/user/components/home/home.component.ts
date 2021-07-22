@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
 // import {MDCTabBar} from '@material/tab-bar';
 
-
 // const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 
 @Component({
@@ -12,7 +11,6 @@ import { AuthService } from '../../../shared/services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   constructor(private _authservice: AuthService, private _router: Router) {}
 
   ngOnInit(): void {}
@@ -22,8 +20,10 @@ export class HomeComponent implements OnInit {
       this._router.navigate(['/login']);
     }
   }
-  irMapa(){
+  getNameUser() {
+    return this._authservice.getUserName();
+  }
+  irMapa() {
     this._router.navigate(['/mapa']);
   }
 }
-

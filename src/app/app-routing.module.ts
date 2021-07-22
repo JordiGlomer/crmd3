@@ -6,8 +6,11 @@ import { HomeComponent } from './user/components/home/home.component';
 import { LoginComponent } from './user/pages/login.component';
 import { RegisterComponent } from './user/pages/register.component';
 import { ListaClientesComponent } from './user/components/lista-clientes/lista-clientes.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { SplashComponent } from './user/components/splash/splash.component';
 
 const routes: Routes = [
+  // { path: 'splash', component: SplashComponent},
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },

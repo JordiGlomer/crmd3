@@ -39,7 +39,12 @@ export class AuthService {
       })
       .pipe(catchError(this.error.handleErrors));
   }
-
+  setUserData(data: any): void {
+    sessionStorage.setItem('userData', data);
+  }
+  getUserName(): String {
+    return sessionStorage.getItem('userData') as string;
+  }
   setToken(token: any): void {
     sessionStorage.setItem('accessToken', token);
   }

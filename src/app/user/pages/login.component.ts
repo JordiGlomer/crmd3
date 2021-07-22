@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         console.log('user logged', data);
         this.authService.setToken(data.accessToken);
+        this.authService.setUserData(user.email);
         this.router.navigate(['/home']);
       },
       (error) => {

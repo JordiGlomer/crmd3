@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ClienteService } from 'src/app/shared/services/cliente.service';
+
+import { ListaClientesService } from '../lista-clientes.service';
 
 @Component({
   selector: 'crm-lista-clientes',
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.scss'],
+  providers: [ListaClientesService],
 })
 export class ListaClientesComponent implements OnInit {
-  constructor(private http: HttpClient, public clientes: ClienteService) {}
+  public clientes: any;
+  constructor(private clientesService: ListaClientesService) {}
 
   ngOnInit() {
-    console.log(JSON.stringify(this.clientes));
+    this.clientesService.getClientes$().subscribe(
+      (result) => {
+        this.clientes = result;
+        console.log(result);
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
   }
 }
